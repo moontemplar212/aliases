@@ -1,5 +1,5 @@
 [alias]
-	aa = add --all
+		aa = add --all
 	alias = config --get-regexp ^alias\\.
 	b = branch
 	bc = "!f() { git branch --contains \"$1\"; }; f"
@@ -11,7 +11,7 @@
 	cleanslate = "!f() { git cl && git reset --hard HEAD && git checkout . -f; }; f"
 	cm = commit -m
 	cma = commit -a -m
-	cmap = "!f() { git aa && git commit -a -m \"$1\" && git push; }; f"
+	cmap = "!f() { git aa && git commit -m \"$1\" --no-verify && git push; }; f"
 	cmapnv = "!f() { git aa && git commit -a -m \"$1\" --no-verify && git push; }; f"
 	cmp = "!f() { git commit -m \"$1\" && git push; }; f"
 	cmav = "!f() { git aa && git commit -m \"$1\" --no-verify; }; f"
@@ -66,4 +66,3 @@
 	unstage = reset --soft HEAD^
 	updater = update-git-for-windows
 	whenadded = log --diff-filter=A
-	gud = "!f() { echo -e \"\nmessage\"; }; f"
