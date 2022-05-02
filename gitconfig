@@ -1,5 +1,5 @@
 [alias]
-		aa = add --all
+	aa = add --all
 	alias = config --get-regexp ^alias\\.
 	b = branch
 	bc = "!f() { git branch --contains \"$1\"; }; f"
@@ -44,8 +44,8 @@
 	parent = "!git log \"$1\"^ -1 #"
 	pl = pull
 	plo = pull origin
-	poc = "!f() { git pull origin \"$(git branch --show-current)\""
-	pnb = "!git push -u origin \"$(git branch --show-current)\""
+	poc = "!f() { git pull origin \"$(git branch --show-current)\"; }; f"
+	pnb = "!git push -u origin \"$(git branch --show-current)\"; }; f"
 	r = restore
 	ra = restore .
 	rast = restore . --staged
